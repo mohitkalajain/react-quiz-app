@@ -6,13 +6,13 @@ const Quiz = () => {
   const [quizState, dispatch] = useContext(QuizContext);
 
   return (
-    <div className="Quiz">
+    <div className="quiz">
       {quizState.showResults && (
         <div className="results">
           <div className="congratulations">Congratulations</div>
           <div className="results-info">
             <div>You have completed the quiz.</div>
-            <div>You've got {quizState.correctAnswerCount} of {quizState.questions.index}</div>
+            <div>You've got {quizState.correctAnswerCount} of {quizState.questions.length}</div>
           </div>
           <div
             className="next-button"
@@ -33,7 +33,7 @@ const Quiz = () => {
             className="next-button"
             onClick={() => dispatch({ type: "NEXT_QUESTION" })}
           >
-            Next Question
+            Next question
           </div>
         </div>
       )}

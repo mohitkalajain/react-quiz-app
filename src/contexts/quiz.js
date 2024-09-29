@@ -15,7 +15,7 @@ const reducer = (state, action) => {
     case "SELECT_ANSWER": {
       const correctAnswerCount =
         action.payload ===
-        state.questions[state.correctAnswerCount].corectAnswer
+        state.questions[state.currentQuestionIndex].correctAnswer
           ? state.correctAnswerCount + 1
           : state.correctAnswerCount;
       return {
