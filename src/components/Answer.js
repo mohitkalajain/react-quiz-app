@@ -12,9 +12,6 @@ const Answer = ({
   const wrongAnswerClass = isWrongAnswer ? "wrong-answer" : '';
   const disabledClass = currentAnswer ? "disabled-answer" : '';
 
-  console.log("currentAnswer",currentAnswer);
-  console.log("answerText",answerText);
-  console.log("correctAnswer",correctAnswer);
   return (
     <div
       className={`answer ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`}

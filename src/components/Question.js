@@ -5,7 +5,6 @@ import { QuizContext } from "../contexts/quiz";
 const Question = ({ questions }) => {
   const [quizState, dispatch] = useContext(QuizContext);
   const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
-   console.log("Questions",currentQuestion)
   return (
     <div>
       <div className="question">{currentQuestion.question}</div>
