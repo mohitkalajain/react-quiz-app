@@ -4,13 +4,27 @@ import { QuizContext } from "../contexts/quiz";
 
 const Quiz = () => {
   const [quizState, dispatch] = useContext(QuizContext);
-  // console.log("Context",quizState);
+   console.log("Context",quizState);
 
   return (
     <div className="Quiz">
-      {!quizState.showResults &&
+      {quizState.showResults && (
+        <div className="results">
+          <div className="congratulations">Congratulations</div>
+          <div className="results-info">
+            <div>You have completed the quiz.</div>
+            <div>You've got 4 of {quizState.questions.index}</div>
+          </div>
+          <div
+            className="next-button"
+            onClick={() => dispatch({ type: "RESTART" })}
+          >
+            Restart
+          </div>
+        </div>
+      )}
+      {!quizState.showResults && (
         <div>
-          
           <div className="score">
             Question {quizState.currentQuestionIndex + 1}/
             {quizState.questions.length}
@@ -23,7 +37,7 @@ const Quiz = () => {
             Next Question
           </div>
         </div>
-      }
+      )}
     </div>
   );
 };
